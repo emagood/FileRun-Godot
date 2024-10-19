@@ -140,6 +140,9 @@ func _on_save_key_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	console_label.text = ""
+	console_write("emanuel casuriaga https://github.com/emagood")
+	console_write(" ")
+	console_write(" ")
 	console_write("es un trabajo derivado de este ")
 	console_write("save-and-load es para godot 3.2 ")
 	console_write("https://github.com/GameEndeavor/save-and-load")
