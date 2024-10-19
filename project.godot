@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="save-and-load"
+run/main_scene="res://Main.tscn"
+config/use_custom_user_dir=true
+config/features=PackedStringArray("4.3")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="res://asets/fondo-godot.png"
+config/icon="res://powered-cog-64.png"
+boot_splash/minimum_display_time=3000
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://asets/": "green",
+"res://saves/": "gray"
+}
+
+[physics]
+
+common/physics_ticks_per_second=35
+
+[rendering]
+
+renderer/rendering_method="mobile"
+environment/defaults/default_environment="res://default_env.tres"

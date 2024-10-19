@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1729367261
+default_env.tres::Environment::3177601098820077210::1729367202::0::1::::<><>::
+FredokaOne-Regular.ttf::FontFile::8106182682291655744::1720377717::1729367263::1::::<><>::
+Main.gd::GDScript::-1::1729365497::0::1::::<>Node2D<>::
+Main.tscn::PackedScene::2193909311206074945::1729367202::0::1::::<><>::res://Main.gd<>uid://cmd8nvfank2bq::::res://asets/9rect.png<>uid://bgyf28c1f5cwg::::res://asets/paisaje.jpeg<>uid://dnqxv58oydgxc::::res://FredokaOne-Regular.ttf
+powered-cog-64.png::CompressedTexture2D::2726304540494879305::1729366408::1729367263::1::::<><>::
+::res://asets/::1729367234
+9rect.png::CompressedTexture2D::5623328611118998782::1720377717::1729367263::1::::<><>::
+fondo-godot.png::CompressedTexture2D::3382934604098263260::1729366729::1729367263::1::::<><>::
+paisaje.jpeg::CompressedTexture2D::2857452350567342970::1728925690::1729367263::1::::<><>::
+::res://saves/::1729367165
