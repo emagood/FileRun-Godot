@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="save-and-load"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://ecenas/Main.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.3")
 boot_splash/bg_color=Color(1, 1, 1, 1)
@@ -30,6 +30,7 @@ window/stretch/aspect="expand"
 
 folder_colors={
 "res://asets/": "green",
+"res://ecenas/": "red",
 "res://saves/": "gray"
 }
 
