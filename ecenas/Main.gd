@@ -79,6 +79,9 @@ func _on_LoadButton_pressed():
 	
 	console_write("data loaded")
 
+
+
+
 func console_write(value):
 	console_label.text += str(value) + "\n"
 	
