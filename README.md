@@ -10,9 +10,9 @@ pantalla principal
 ![Screenshot borrar](https://github.com/emagood/save-load-godot/blob/main/captura/borrado.PNG)
 
 
-# agrregar mas datos al diccionario
+# nodos facil de usar 
 
-![Screenshot add ](https://github.com/emagood/save-load-godot/blob/main/captura/nueva%20key.PNG)
+![Screenshot add ](https://github.com/emagood/save-load-godot/blob/main/captura/Captura.PNG)
 
 # guardar todo con key : value 
 
