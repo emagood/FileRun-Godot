@@ -25,6 +25,7 @@ var array_var = {}
 
 func _ready() -> void:
 
+
 	dir_contents("res://")
 	
 	#var dir = Directory.new()
@@ -83,11 +84,14 @@ func _on_LoadButton_pressed():
 
 
 func console_write(value):
+	set_deferred("scroll_horizontal", 600)
 	console_label.text += str(value) + "\n"
 	
 	
 	
 func _input(event: InputEvent) -> void:
+	$CanvasLayer/Control/SaveLoadWindow/Panel/VBoxContainer/Console/ScrollContainer.scroll_vertical = 600
+	set_deferred("scroll_vertical", 600)
 	if Input.is_key_pressed(KEY_A):
 		data["Godot"] = {
 		"First Array": [1, 2, 3, 4,3,4,4,3,4,5,4,5,898,7,9,5,7,6,5,7,7,6,7,6,5,6,7,5,3,6,363,63,6736,3,36,36,36,3,63,63,6,3,63,663,63,63,6,345345,3,53,5646,356,45,64,7645,65,456,654,756,6],
