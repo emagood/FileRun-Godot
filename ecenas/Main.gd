@@ -1,15 +1,16 @@
 extends Node2D
 
 const SAVE_DIR = "res://saves/"
+@onready var edit_local: Label = $"CanvasLayer/HBoxContainer/edit local"
 
 @onready var console_label = $CanvasLayer/Control/SaveLoadWindow/Panel/VBoxContainer/Console/ScrollContainer/ConsoleLabel
 @onready var key_user = $CanvasLayer/Control/SaveLoadWindow/Panel/VBoxContainer/HBoxContainer/TextEdit
 @onready var value_user = $CanvasLayer/Control/SaveLoadWindow/Panel/VBoxContainer/HBoxContainer/TextEdit2
 @onready var save_text = $CanvasLayer/HBoxContainer/savefile
-
+var platform
 var save_name = "save.dat"
 var save_path = SAVE_DIR 
-
+var local = "user://"
 
 var data = {
 		"name" : "Paw Bearer",
@@ -24,9 +25,13 @@ var array_var = {}
 
 
 func _ready() -> void:
+	platform = OS.get_name()
 
-
-	dir_contents("res://")
+	if platform == "Android":
+		local = "user://"
+		print("Estamos en Android")
+	edit_local.text = local
+	dir_contents(local)
 	
 	#var dir = Directory.new()
 	#var path = "res://nueva_carpeta"
@@ -40,8 +45,8 @@ func _ready() -> void:
 			#print("Error al crear la carpeta: ", err
 	
 	
-	var dir = DirAccess.open("res://")
-	var path = "res://saves"
+	var dir = DirAccess.open(local)
+	var path = local+ "saves"
 	if dir.dir_exists(path):
 		print("La carpeta ya existe.")
 	else:
@@ -84,14 +89,14 @@ func _on_LoadButton_pressed():
 
 
 func console_write(value):
-	set_deferred("scroll_horizontal", 600)
+	#set_deferred("scroll_horizontal", 60)
 	console_label.text += str(value) + "\n"
 	
 	
 	
 func _input(event: InputEvent) -> void:
 	$CanvasLayer/Control/SaveLoadWindow/Panel/VBoxContainer/Console/ScrollContainer.scroll_vertical = 600
-	set_deferred("scroll_vertical", 600)
+	#set_deferred("scroll_vertical", 60000)
 	if Input.is_key_pressed(KEY_A):
 		data["Godot"] = {
 		"First Array": [1, 2, 3, 4,3,4,4,3,4,5,4,5,898,7,9,5,7,6,5,7,7,6,7,6,5,6,7,5,3,6,363,63,6736,3,36,36,36,3,63,63,6,3,63,663,63,63,6,345345,3,53,5646,356,45,64,7645,65,456,654,756,6],
@@ -159,3 +164,8 @@ func _on_button_pressed() -> void:
 func _on_borrar_pressed() -> void:
 	console_label.text = ""
 	pass 
+
+
+func _on_line_edit_text_submitted(new_text: String) -> void:
+	local = new_text
+	edit_local.text = local

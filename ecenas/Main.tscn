@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://6i0mo5ikrt7n"]
+[gd_scene load_steps=8 format=3 uid="uid://6i0mo5ikrt7n"]
 
-[ext_resource type="Script" path="res://ecenas/Main.gd" id="1_2tqft"]
+[ext_resource type="Script" uid="uid://dljpnmu7xeyp4" path="res://ecenas/Main.gd" id="1_2tqft"]
 [ext_resource type="Texture2D" uid="uid://bgyf28c1f5cwg" path="res://asets/paisaje.jpeg" id="2_36ybe"]
 [ext_resource type="FontFile" uid="uid://dnqxv58oydgxc" path="res://FredokaOne-Regular.ttf" id="3_3l0vw"]
 [ext_resource type="Texture2D" uid="uid://cmd8nvfank2bq" path="res://asets/9rect.png" id="4_w13ky"]
@@ -24,6 +24,9 @@ Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/fonts/font = SubResource("1")
 Label/styles/normal = null
+
+[sub_resource type="LabelSettings" id="LabelSettings_hhp63"]
+font_color = Color(0.06053035, 0.06053035, 0.060530342, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_2tqft")
@@ -89,7 +92,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-follow_focus = true
 
 [node name="ConsoleLabel" type="Label" parent="CanvasLayer/Control/SaveLoadWindow/Panel/VBoxContainer/Console/ScrollContainer"]
 layout_mode = 2
@@ -173,8 +175,18 @@ text = "save.dat"
 max_length = 50
 expand_to_text_length = true
 
+[node name="local dir" type="LineEdit" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+placeholder_text = "enter ress: o user: "
+
+[node name="edit local" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_hhp63")
+
 [connection signal="pressed" from="CanvasLayer/Control/SaveLoadWindow/Panel/VBoxContainer/HBoxContainer/save key" to="." method="_on_save_key_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/SaveLoadWindow/Panel/VBoxContainer/HBoxContainer/SaveButton2" to="." method="_on_SaveButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/SaveLoadWindow/Panel/VBoxContainer/HBoxContainer/LoadButton" to="." method="_on_LoadButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/creditos" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/borrar" to="." method="_on_borrar_pressed"]
+[connection signal="text_submitted" from="CanvasLayer/HBoxContainer/local dir" to="." method="_on_line_edit_text_submitted"]
